@@ -13,8 +13,8 @@ jobs:
     timeout-minutes: 5
 
     env:
-      # Override in repo Settings → Variables → SITE_URL when you deploy a new domain
-      SITE_URL: ${{ vars.SITE_URL || 'https://myprofilev2.vercel.app/' }}
+      # Override in repo Settings → Variables → SITE_URL if the deploy URL changes
+      SITE_URL: ${{ vars.SITE_URL || 'https://udy8007.github.io/udyilangovan/index.html' }}
       NTFY_URL: https://ntfy.sh/udyilangovan
 
     steps:
