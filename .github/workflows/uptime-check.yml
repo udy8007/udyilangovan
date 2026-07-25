@@ -1,0 +1,84 @@
+name: Daily Uptime Check
+
+# Runs daily at 6:00 AM IST (00:30 UTC)
+on:
+  schedule:
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  uptime:
+    name: Check portfolio availability
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    env:
+      # Override in repo Settings → Variables → SITE_URL when you deploy a new domain
+      SITE_URL: ${{ vars.SITE_URL || 'https://myprofilev2.vercel.app/' }}
+      NTFY_URL: https://ntfy.sh/udyilangovan
+
+    steps:
+      - name: Probe site
+        id: probe
+        shell: bash
+        run: |
+          set +e
+          echo "Checking: ${SITE_URL}"
+
+          HTTP_CODE=$(curl -sS -L \
+            --connect-timeout 15 \
+            --max-time 30 \
+            -o /tmp/uptime-body.txt \
+            -w "%{http_code}" \
+            "${SITE_URL}")
+          CURL_EXIT=$?
+
+          {
+            echo "curl_exit=${CURL_EXIT}"
+            echo "http_code=${HTTP_CODE}"
+          } >> "$GITHUB_OUTPUT"
+
+          if [ "${CURL_EXIT}" -ne 0 ]; then
+            echo "up=false" >> "$GITHUB_OUTPUT"
+            echo "reason=Request failed (curl exit ${CURL_EXIT})" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ "${HTTP_CODE}" -lt 200 ] || [ "${HTTP_CODE}" -ge 400 ]; then
+            echo "up=false" >> "$GITHUB_OUTPUT"
+            echo "reason=Unexpected HTTP status ${HTTP_CODE}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "up=true" >> "$GITHUB_OUTPUT"
+          echo "reason=OK (${HTTP_CODE})" >> "$GITHUB_OUTPUT"
+
+      - name: Notify only if down
+        if: steps.probe.outputs.up != 'true'
+        shell: bash
+        env:
+          HTTP_CODE: ${{ steps.probe.outputs.http_code }}
+          REASON: ${{ steps.probe.outputs.reason }}
+        run: |
+          NOW="$(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M:%S %Z')"
+          MESSAGE="$(printf '%s\n' \
+            'Portfolio site appears DOWN.' \
+            '' \
+            "URL: ${SITE_URL}" \
+            "HTTP status: ${HTTP_CODE:-n/a}" \
+            "Reason: ${REASON}" \
+            "Checked at: ${NOW}")"
+
+          curl -sS -X POST "${NTFY_URL}" \
+            -H "Title: Portfolio DOWN" \
+            -H "Priority: high" \
+            -H "Tags: warning,rotating_light" \
+            --data-binary "${MESSAGE}"
+
+          echo "Downtime alert sent to ntfy."
+
+      - name: Log healthy status
+        if: steps.probe.outputs.up == 'true'
+        run: |
+          echo "Site is up — no notification sent."
+          echo "Status: ${{ steps.probe.outputs.reason }}"
