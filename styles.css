@@ -990,6 +990,20 @@ a.project-card:hover .project-info > svg {
   background: #ff774e;
 }
 
+.project-ramesh .project-visual {
+  background: linear-gradient(155deg, #7a1f1f 0%, #c9922a 100%);
+}
+
+.project-ramesh .project-mockup {
+  color: #fff8eb;
+}
+
+.project-ramesh .shape-sun,
+.project-ramesh .shape-sun::before,
+.project-ramesh .shape-sun::after {
+  border-color: rgba(255, 248, 235, 0.22);
+}
+
 .shape-sun {
   position: absolute;
   width: 28rem;
@@ -1044,6 +1058,26 @@ a.project-card:hover .project-info > svg {
   background:
     linear-gradient(140deg, transparent 40%, rgba(255, 255, 255, 0.06)),
     #27334d;
+}
+
+.project-bhr .project-visual {
+  background:
+    linear-gradient(140deg, transparent 35%, rgba(255, 255, 255, 0.07)),
+    #2f5238;
+}
+
+.bhr-mark {
+  display: grid;
+  width: 9rem;
+  height: 9rem;
+  place-items: center;
+  border: 1px solid rgba(245, 230, 196, 0.35);
+  border-radius: 50%;
+  color: #f0dfa8;
+  font-family: var(--display);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .hands-mark {
@@ -1422,6 +1456,312 @@ a.project-card:hover .project-info > svg {
   letter-spacing: 0.12em;
   text-align: center;
   text-transform: uppercase;
+}
+
+.pricing {
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--paper);
+  isolation: isolate;
+}
+
+.pricing-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.pricing-orb-one {
+  top: -12rem;
+  right: -6rem;
+  width: 28rem;
+  height: 28rem;
+  background: radial-gradient(circle, rgba(199, 255, 68, 0.14), transparent 68%);
+}
+
+.pricing-orb-two {
+  bottom: -10rem;
+  left: -8rem;
+  width: 32rem;
+  height: 32rem;
+  background: radial-gradient(circle, rgba(255, 104, 70, 0.12), transparent 70%);
+}
+
+.pricing-layout {
+  display: grid;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+}
+
+.pricing-intro h2 {
+  max-width: 14ch;
+  margin: 2.5rem 0 1.5rem;
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 5.5vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+
+.pricing-intro h2 em {
+  color: var(--lime);
+  font-style: normal;
+}
+
+.pricing-intro > p {
+  max-width: 34rem;
+  margin: 0;
+  color: rgba(240, 238, 232, 0.72);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.pricing-devices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.device-screen {
+  display: block;
+  border: 1px solid var(--line-dark);
+  background:
+    linear-gradient(145deg, rgba(199, 255, 68, 0.12), transparent 55%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.device-web {
+  width: 8.5rem;
+}
+
+.device-web .device-bar {
+  display: flex;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--line-dark);
+  border-bottom: 0;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.device-web .device-bar i {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.device-web .device-bar i:nth-child(2) {
+  background: var(--lime);
+}
+
+.device-web .device-bar i:nth-child(3) {
+  background: var(--blue);
+}
+
+.device-web .device-screen {
+  width: 100%;
+  height: 4.5rem;
+}
+
+.device-mobile {
+  width: 3.4rem;
+}
+
+.device-mobile .device-notch {
+  width: 1.1rem;
+  height: 0.28rem;
+  margin-bottom: 0.35rem;
+  border-radius: 999px;
+  background: rgba(240, 238, 232, 0.25);
+}
+
+.device-mobile .device-screen {
+  width: 100%;
+  height: 6.2rem;
+  border-radius: 0.65rem;
+}
+
+.device-desktop {
+  width: 7.5rem;
+}
+
+.device-desktop .device-screen {
+  width: 100%;
+  height: 4.2rem;
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+
+.device-stand {
+  width: 2.5rem;
+  height: 0.55rem;
+  margin-top: -1px;
+  border: 1px solid var(--line-dark);
+  border-top: 0;
+  border-radius: 0 0 0.25rem 0.25rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pricing-card {
+  position: relative;
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  border: 1px solid var(--line-dark);
+  background:
+    linear-gradient(155deg, rgba(199, 255, 68, 0.08), transparent 42%),
+    rgba(17, 20, 18, 0.92);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.35);
+}
+
+.pricing-card::before {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  width: 5rem;
+  height: 3px;
+  background: var(--lime);
+  content: "";
+}
+
+.pricing-badge {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid rgba(199, 255, 68, 0.35);
+  color: var(--lime);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pricing-tagline {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.5rem;
+  margin: 2rem 0 1.25rem;
+}
+
+.pricing-currency {
+  margin-bottom: 0.65rem;
+  color: var(--coral);
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.pricing-amount {
+  font-family: var(--display);
+  font-size: clamp(3.5rem, 8vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+.pricing-period {
+  margin-bottom: 0.55rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pricing-highlight {
+  margin: 0 0 1.5rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--lime);
+  background: rgba(199, 255, 68, 0.08);
+  color: rgba(240, 238, 232, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.pricing-highlight strong {
+  color: var(--lime);
+}
+
+.pricing-features {
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--line-dark);
+  color: rgba(240, 238, 232, 0.88);
+  font-size: 0.92rem;
+}
+
+.pricing-check {
+  position: relative;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.pricing-check::after {
+  position: absolute;
+  top: 0.15rem;
+  left: 0.38rem;
+  width: 0.28rem;
+  height: 0.55rem;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.pricing-cta {
+  width: 100%;
+}
+
+.pricing-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.25rem;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--line-dark);
+  color: rgba(240, 238, 232, 0.55);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pricing-strip i {
+  color: var(--coral);
+  font-style: normal;
 }
 
 .contact {
@@ -1922,6 +2262,14 @@ a.project-card:hover .project-info > svg {
     grid-template-columns: 1fr;
   }
 
+  .pricing-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-devices {
+    justify-content: center;
+  }
+
   .experience-heading {
     display: block;
   }
@@ -2080,6 +2428,271 @@ a.project-card:hover .project-info > svg {
 
   .site-footer {
     min-height: 12rem;
+  }
+}
+
+.thank-you-page {
+  min-height: 100vh;
+}
+
+.thank-you-header {
+  position: relative;
+  border-bottom: 1px solid var(--line-dark);
+  background: rgba(11, 13, 12, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.thank-you-main {
+  position: relative;
+  display: flex;
+  min-height: calc(100vh - 5.5rem);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 6vw, 4rem) var(--page-padding) 3rem;
+}
+
+.thank-you-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.thank-you-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(var(--line-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
+  background-size: 4.5rem 4.5rem;
+  mask-image: radial-gradient(circle at 50% 40%, black, transparent 72%);
+}
+
+.thank-you-page .orb-one {
+  top: 8%;
+  right: -8%;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, rgba(255, 104, 70, 0.35), transparent 70%);
+}
+
+.thank-you-page .orb-two {
+  bottom: 5%;
+  left: -10%;
+  width: 26rem;
+  height: 26rem;
+  background: radial-gradient(circle, rgba(91, 120, 255, 0.28), transparent 70%);
+}
+
+.thank-you-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 40rem);
+  padding: clamp(2rem, 5vw, 3rem);
+  border: 1px solid var(--line-dark);
+  background: rgba(17, 20, 18, 0.88);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.35);
+}
+
+.thank-you-badge {
+  position: relative;
+  width: 5.5rem;
+  height: 5.5rem;
+  margin: 0 auto 1.75rem;
+}
+
+.thank-you-check {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.thank-you-check svg {
+  width: 2.2rem;
+  stroke-width: 2.4;
+}
+
+.thank-you-ring {
+  position: absolute;
+  inset: -0.35rem;
+  border: 1px solid rgba(199, 255, 68, 0.45);
+  border-radius: 50%;
+  animation: thank-you-pulse 2.8s ease-out infinite;
+}
+
+.thank-you-ring-delay {
+  animation-delay: 1.4s;
+}
+
+@keyframes thank-you-pulse {
+  0% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+}
+
+.thank-you-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.thank-you-card h1 {
+  margin: 0 0 1rem;
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  letter-spacing: -0.06em;
+  line-height: 1;
+  text-align: center;
+}
+
+.thank-you-lead {
+  max-width: 32rem;
+  margin: 0 auto 2rem;
+  color: rgba(240, 238, 232, 0.78);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.thank-you-steps {
+  padding: 1.5rem;
+  border: 1px solid var(--line-dark);
+  background: rgba(11, 13, 12, 0.55);
+}
+
+.thank-you-steps h2 {
+  margin: 0 0 1.25rem;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.thank-you-steps ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thank-you-steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.thank-you-steps li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.step-num {
+  color: var(--coral);
+  font-family: var(--display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.thank-you-steps strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--display);
+  font-size: 1rem;
+}
+
+.thank-you-steps p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.thank-you-note {
+  margin: 1.75rem 0 1.25rem;
+  color: rgba(240, 238, 232, 0.65);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.thank-you-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.85rem;
+}
+
+.button-ghost {
+  min-height: 3.7rem;
+  border: 1px solid var(--line-dark);
+  background: transparent;
+  color: var(--paper);
+  font-size: 0.83rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.button-ghost:hover {
+  border-color: rgba(240, 238, 232, 0.35);
+  background: rgba(240, 238, 232, 0.06);
+}
+
+.thank-you-wa:hover {
+  background: var(--paper);
+}
+
+.thank-you-mail {
+  margin: 0.5rem auto 0;
+  text-align: center;
+}
+
+.thank-you-footer {
+  position: relative;
+  z-index: 1;
+  margin: 2rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+@media (min-width: 36rem) {
+  .thank-you-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .thank-you-actions .button {
+    flex: 1 1 auto;
+    min-width: 11rem;
+  }
+
+  .thank-you-mail {
+    flex: 1 1 100%;
   }
 }
 
