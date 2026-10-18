@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVQW11ZV34"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-TVQW11ZV34");
+    </script>
     <meta
       name="description"
       content="Udhaya Kumar K — Senior Software Engineer and Full Stack Developer with 7+ years of experience in .NET, Angular, React, and enterprise software."
@@ -119,6 +130,7 @@
         <a href="#expertise">Expertise</a>
         <a href="#work">Work</a>
         <a href="#experience">Journey</a>
+        <a href="#pricing">Pricing</a>
       </nav>
       <a class="header-cta" href="#contact">
         Let's talk
@@ -132,6 +144,7 @@
         <a href="#expertise">Expertise</a>
         <a href="#work">Work</a>
         <a href="#experience">Journey</a>
+        <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </div>
     </header>
@@ -381,6 +394,33 @@
           </a>
 
           <a
+            class="project-card project-ramesh reveal"
+            href="http://rameshcrackers.shop/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="project-visual">
+              <span class="project-shape shape-sun"></span>
+              <span class="project-mockup">
+                <small>RAMESH</small>
+                <b>CRACKERS</b>
+                <i>Valangaiman, online.</i>
+              </span>
+            </div>
+            <div class="project-info">
+              <div>
+                <span>CLIENT WEBSITE · 2026</span>
+                <h3>Ramesh Crackers</h3>
+                <p>
+                  E-commerce site for Valangaiman crackers — product catalog, ordering,
+                  and payment-ready checkout.
+                </p>
+              </div>
+              <svg><use href="#icon-external"></use></svg>
+            </div>
+          </a>
+
+          <a
             class="project-card project-tall project-hayes reveal"
             href="https://www.hayesinterpretingservices.com/"
             target="_blank"
@@ -395,6 +435,29 @@
                 <span>CLIENT WEBSITE · USA</span>
                 <h3>Hayes Interpreting</h3>
                 <p>Accessible service platform for an ASL interpreting agency.</p>
+              </div>
+              <svg><use href="#icon-external"></use></svg>
+            </div>
+          </a>
+
+          <a
+            class="project-card project-bhr reveal"
+            href="https://www.bhrtraders.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="project-visual">
+              <span class="bhr-mark">BHR</span>
+              <div class="project-lines"></div>
+            </div>
+            <div class="project-info">
+              <div>
+                <span>CLIENT WEBSITE · CHENNAI</span>
+                <h3>BHR Traders</h3>
+                <p>
+                  Wholesale rice traders — product showcase, enquiry contact, and a
+                  professional B2B web presence.
+                </p>
               </div>
               <svg><use href="#icon-external"></use></svg>
             </div>
@@ -540,10 +603,105 @@
         </div>
       </section>
 
+      <section class="pricing section" id="pricing" aria-labelledby="pricing-heading">
+        <div class="pricing-orb pricing-orb-one" aria-hidden="true"></div>
+        <div class="pricing-orb pricing-orb-two" aria-hidden="true"></div>
+
+        <div class="pricing-layout">
+          <div class="pricing-intro reveal">
+            <div class="section-index">06 / ALL-IN-ONE PLAN</div>
+            <h2 id="pricing-heading">
+              Web, mobile &amp; desktop — <em>one price.</em>
+            </h2>
+            <p>
+              Full product development with hosting, domain, AI support, and
+              unlimited revisions — built for startups and small businesses.
+            </p>
+
+            <div class="pricing-devices" aria-hidden="true">
+              <figure class="device device-web">
+                <span class="device-bar"><i></i><i></i><i></i></span>
+                <span class="device-screen"></span>
+                <figcaption>Website</figcaption>
+              </figure>
+              <figure class="device device-mobile">
+                <span class="device-notch"></span>
+                <span class="device-screen"></span>
+                <figcaption>Mobile</figcaption>
+              </figure>
+              <figure class="device device-desktop">
+                <span class="device-screen"></span>
+                <span class="device-stand"></span>
+                <figcaption>Desktop</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <article class="pricing-card reveal">
+            <div class="pricing-card-top">
+              <span class="pricing-badge">Complete package</span>
+              <p class="pricing-tagline">Everything included · No hidden fees</p>
+            </div>
+
+            <div class="pricing-price" aria-label="Price eighteen thousand rupees">
+              <span class="pricing-currency">₹</span>
+              <span class="pricing-amount">18,000</span>
+              <span class="pricing-period">one-time</span>
+            </div>
+
+            <p class="pricing-highlight">
+              <strong>Unlimited changes</strong> until you’re happy with the product.
+            </p>
+
+            <ul class="pricing-features">
+              <li>
+                <span class="pricing-check" aria-hidden="true"></span>
+                Website development
+              </li>
+              <li>
+                <span class="pricing-check" aria-hidden="true"></span>
+                Mobile app development
+              </li>
+              <li>
+                <span class="pricing-check" aria-hidden="true"></span>
+                Desktop application development
+              </li>
+              <li>
+                <span class="pricing-check" aria-hidden="true"></span>
+                Domain name registration
+              </li>
+              <li>
+                <span class="pricing-check" aria-hidden="true"></span>
+                Web server &amp; hosting setup
+              </li>
+              <li>
+                <span class="pricing-check" aria-hidden="true"></span>
+                AI service integration &amp; support
+              </li>
+            </ul>
+
+            <a class="button button-primary pricing-cta magnetic" href="#contact">
+              Start your project
+              <svg><use href="#icon-arrow"></use></svg>
+            </a>
+          </article>
+        </div>
+
+        <div class="pricing-strip reveal" aria-label="Included services">
+          <span>Web</span><i>✦</i>
+          <span>Mobile</span><i>✦</i>
+          <span>Desktop</span><i>✦</i>
+          <span>Unlimited revisions</span><i>✦</i>
+          <span>Domain</span><i>✦</i>
+          <span>Hosting</span><i>✦</i>
+          <span>AI services</span><i>✦</i>
+        </div>
+      </section>
+
       <section class="contact section" id="contact">
         <div class="contact-glow"></div>
         <div class="contact-inner">
-          <div class="section-index reveal">06 / LET'S TALK</div>
+          <div class="section-index reveal">07 / LET'S TALK</div>
           <h2 class="reveal">Have a challenge?<br /><span>Let's build the answer.</span></h2>
           <p class="contact-intro reveal">
             Available for web applications, enterprise systems, product consulting,
